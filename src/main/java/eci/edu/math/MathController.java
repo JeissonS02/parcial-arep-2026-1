@@ -8,31 +8,26 @@ import org.springframework.web.bind.annotation.RestController;
 public class MathController {
 
     @GetMapping("/collatzsequence")
-    public Math math(@RequestParam int n) {
+    public Math math(@RequestParam(value= "n") int n) {
 
         return new Math(collatz(n));
     }
 
     public String collatz(int num){
         String sequence = "" + num;
-
         while(num!=1){
             int op = 0;
 
             if(num % 2 == 0){
                 op = num / 2;
-                num = op;
-                
+                num = op; 
             }
             else{
                 op = (num * 3) + 1;
-                num = op;
-                
+                num = op; 
             }
-            
             sequence = sequence + "->"+ num;
         }
-        
     return sequence;
     }
 }

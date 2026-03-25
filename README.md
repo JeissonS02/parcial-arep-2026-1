@@ -27,9 +27,12 @@ Las reglas son:
 
  13→40→20→10→5→16→8→4→2→1
 
+La salida debe quedar en el siguiente formato:
+
+{</div> <div> </div> <div> "operation": "collatzsequence",</div> <div> </div> <div> "input":  13,</div> <div> </div> <div> "output":  "13 -> 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1"</div> <div> </div> <div>}
 
 
- #### Evidencias de ejecucion:
+ ### Evidencias de ejecucion:
  EC2 creadas:
  - Proxy:
     
@@ -42,3 +45,42 @@ Las reglas son:
  - MathService 2:
 
     ![alt text](/images/mathservice2.png)
+
+- Instancias de EC2:
+
+    ![alt text](/images/instances.png)
+
+- Prueba Conjetura de Collatz
+
+- Ejecucion desde las EC2:
+
+- Ejecucion desde navegador:
+
+
+### Como correr en EC2
+
+1. Nos conectamos por terminal a las EC2 con el comando:
+```bash
+ssh -i "key.pem" ec2-user@URL-DE-LA-DNS-PUBLICA-DEL-EC2
+```
+Asi con cada EC2 (mathservice1,mathservice2 y proxy)
+
+2. Dentro del ec2, ejecutamos el archivo compilado
+```bash
+java -jar "NombreDelArchivoCompilado"
+```
+Por ejemplo:
+```bash
+java -jar "math-0.0.01-SNAPSHOT.jar"
+```
+Ejecutamos el archivo compilado en las 3 maquinas
+
+Al hacer esto, ya debe estar corriendo la API en la URL asignada para cada EC2
+
+3. Una vez corriendo las tres EC2, podemos hacer la prueba:
+Ingresamos desde nuestro navegador a la URL asignada para la EC2 de proxy asi:
+
+```bash
+http://ec2-user@IP-ASIGNADA:8080/index.html
+```
+Ya aqui podemos hacer las pruebas de la funcion de Collatz
