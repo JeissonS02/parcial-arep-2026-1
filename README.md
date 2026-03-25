@@ -50,11 +50,15 @@ La salida debe quedar en el siguiente formato:
 
     ![alt text](/images/instances.png)
 
+- Security Groups Para las EC2:
+
+    ![alt text](/images/secgroups.png)
+
 - Prueba Conjetura de Collatz
 
 - Ejecucion desde las EC2:
 
-- Ejecucion desde navegador:
+- Prueba desde navegador:
 
 
 ### Como correr en EC2
