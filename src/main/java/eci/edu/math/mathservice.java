@@ -1,3 +1,7 @@
 package eci.edu.math;
 
-public record mathservice(long id, String content) { }
+public class MathService(n) {
+
+
+
+ }

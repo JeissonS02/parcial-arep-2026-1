@@ -11,9 +11,9 @@ public class MathController {
 
 private final AtomicLong counter = new AtomicLong();
 
-@GetMapping("/greeting")
-public Math mathservice(@RequestParam(value = "name", defaultValue = "World") String name) {
-return new Math(counter.incrementAndGet(), String.format(template, name));
+@GetMapping("/collatzsequence")
+public Math mathservice(@RequestParam(value = "n") int n) {
+return new Math(counter.incrementAndGet(), String.format(, n));
 }
 }
 
